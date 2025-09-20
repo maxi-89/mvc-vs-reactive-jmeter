@@ -19,8 +19,8 @@ public class BookController {
     private final BookServiceImpl bookService;
 
     @GetMapping
-    public Flux<Book> getAllBooks() {
-        return bookService.getAllBooks();
+    public Flux<BookWithReviews> getAllBooks() {
+        return bookService.getBookWithReviews();
     }
 
     @PostMapping

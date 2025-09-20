@@ -22,4 +22,9 @@ public class Review {
 
     @Column("book_id")
     private Long bookId;
+
+    public Review(String comment) {
+    this.comment = comment;
+    }
+
 }

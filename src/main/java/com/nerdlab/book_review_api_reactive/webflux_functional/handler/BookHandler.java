@@ -17,8 +17,10 @@ public class BookHandler {
     private final BookServiceImpl bookService;
 
     public Mono<ServerResponse> getAllBooks(ServerRequest request) {
-        return ServerResponse.ok().body(bookService.getBookWithReviews(), BookWithReviews.class);
+        return ServerResponse.ok().body(bookService.getBookWithReviewsWithProjection(), BookWithReviews.class);
     }
+
+
 
     public Mono<ServerResponse> createBook(ServerRequest request) {
         return request.bodyToMono(Book.class)
